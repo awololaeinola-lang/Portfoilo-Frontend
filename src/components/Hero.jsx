@@ -1,32 +1,80 @@
 import "./Hero.css";
 import profile from "../assets/profile.jpg";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-container">
+        
         {/* Left side: text */}
         <div className="hero-text">
-          <h1>Hi, I’m Einola Awolola – Full-Stack Developer</h1>
-          <h3>  I build responive, user-friendly web applications from front-end to back-end. With a focus on React, Node.js, Express, and MongoDB, I create scalable solutions that bring ideas to life</h3>
-          <p>Check out my projects below or get in touch to collaborate! </p>
+          
+          <h1>
+            Full-Stack Developer Building Modern, Scalable Web Applications
+          </h1>
+
+          <h2 className="highlight">
+            I help businesses and startups transform ideas into powerful digital products.
+          </h2>
+
+          <p>
+            With expertise in React, Node.js, Express, and MongoDB, I develop
+            responsive, secure, and performance-driven web applications —
+            from intuitive front-end interfaces to reliable backend systems.
+          </p>
+
           <div className="hero-buttons">
-            <a href="#projects" className="btn btn-primary">View Projects</a>
-            <a href="#contact" className="btn btn-secondary">Get in Touch</a>
+            <a href="#projects" className="btn btn-primary">
+              View My Work
+            </a>
+            <a href="#contact" className="btn btn-secondary">
+              Start a Project
+            </a>
           </div>
+
+          {/* Professional Contact Links */}
+          <div className="hero-socials">
+            <a
+              href="https://wa.me/2349069190561"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="https://github.com/awololaeinola-lang"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="mailto:awololaeinola@gmail.com"
+              aria-label="Email"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+
         </div>
 
         {/* Right side: profile image */}
         <div className="hero-image">
-          <img src={profile} alt="Profile" className="floating" />
+          <img
+            src={profile}
+            alt="Einola Awolola - Full Stack Developer"
+            className="floating"
+          />
         </div>
-      
-    </div>
-      
+
+      </div>
     </section>
   );
-
 }
 
 export default Hero;

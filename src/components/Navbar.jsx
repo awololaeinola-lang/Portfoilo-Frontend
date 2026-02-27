@@ -1,19 +1,33 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar({ toggleTheme, theme }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav>
-      <h2>Eniola</h2>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <nav className="navbar">
+      <h2 className="logo">Eniola</h2>
+
+      {/* Desktop Menu */}
+      <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+        <li><a href="#hero" onClick={() => setIsOpen(false)}>Home</a></li>
+        <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
+        <li><a href="#skills" onClick={() => setIsOpen(false)}>Services</a></li>
+        <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
+        <li><a href="#testimonials" onClick={() => setIsOpen(false)}>Testimonials</a></li>
+        <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
+        <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+
+        <button className="theme-switch" onClick={toggleTheme}>
+          {theme === "light" ? "Dark Mode" : "Light Mode"}
+        </button>
       </ul>
-      <button className="theme-switch" onClick={toggleTheme}>
-        {theme === "light" ? "Dark Mode" : "Light Mode"}
-      </button>
+
+      {/* Hamburger Icon */}
+      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </div>
     </nav>
   );
 }

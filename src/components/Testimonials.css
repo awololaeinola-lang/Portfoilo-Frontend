@@ -1,36 +1,128 @@
+/* Testimonials.css */
+
+/* Section Styling */
 .testimonials {
-  padding: 70px 20px;
+  padding: 80px 20px;
+  background: #f9fafc;
   text-align: center;
-  background: var(--bg-color);
+  font-family: 'Arial', sans-serif;
 }
 
-.testimonials h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--primary-color);
+.testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
+.testimonials-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Grid Layout */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Individual Testimonial Card */
 .testimonial-card {
-  max-width: 600px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 14px;
-  background: var(--section-bg);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  text-align: left;
+  position: relative;
 }
 
-.testimonial-card p {
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Quote Styling */
+.testimonial-quote {
+  font-size: 1rem;
+  color: #333;
   font-style: italic;
-  margin-bottom: 20px;
-  color: var(--text-color);
+  margin-bottom: 15px;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 25px;
 }
 
-.testimonial-card h4 {
-  margin-bottom: 5px;
-  color: var(--primary-color);
+.testimonial-quote::before {
+  content: "“";
+  font-size: 2rem;
+  color: #00c3ff;
+  position: absolute;
+  left: 0;
+  top: -5px;
 }
 
-.testimonial-card span {
+/* Name & Company */
+.testimonial-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 3px;
+}
+
+.testimonial-company {
   font-size: 0.9rem;
-  color: gray;
+  color: #555;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .testimonials {
+    padding: 60px 15px;
+  }
+
+  .testimonials-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .testimonial-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .testimonial-quote {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+
+  .testimonial-company {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .testimonials-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .testimonial-quote {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-name {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-company {
+    font-size: 0.8rem;
+  }
 }

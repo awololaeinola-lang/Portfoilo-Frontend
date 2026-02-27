@@ -1,44 +1,121 @@
+
+/* Section Styling */
 .experience {
-  padding: 70px 20px;
+  padding: 80px 20px;
+  background: #f0f4f8;
+  font-family: 'Arial', sans-serif;
   text-align: center;
-  background: var(--section-bg);
 }
 
-.experience h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--primary-color);
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Grid Layout */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Card Styling */
 .experience-card {
-  max-width: 700px;
-  margin: auto;
-  background: var(--bg-color);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
   text-align: left;
 }
 
-.experience-card h3 {
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Role & Company */
+.experience-role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
   margin-bottom: 5px;
-  color: var(--primary-color);
 }
 
-.experience-card span {
-  font-size: 0.9rem;
-  color: gray;
+.experience-company {
+  font-size: 0.95rem;
+  color: #555;
+  display: block;
+  margin-bottom: 15px;
 }
 
-.experience-card p {
-  margin: 15px 0;
-  color: var(--text-color);
+/* Description & Tasks */
+.experience-description {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
 }
 
-.experience-card ul {
+.experience-tasks {
+  list-style-type: disc;
   padding-left: 20px;
 }
 
-.experience-card li {
-  margin-bottom: 10px;
+.experience-tasks li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .experience {
+    padding: 60px 15px;
+  }
+
+  .experience-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .experience-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .experience-role {
+    font-size: 1.3rem;
+  }
+
+  .experience-description,
+  .experience-tasks li {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .experience-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .experience-role {
+    font-size: 1.2rem;
+  }
+
+  .experience-description,
+  .experience-tasks li {
+    font-size: 0.9rem;
+  }
 }
