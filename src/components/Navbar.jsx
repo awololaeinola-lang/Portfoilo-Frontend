@@ -1,15 +1,24 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar({ toggleTheme, theme }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Lock body scroll on mobile menu open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  }, [isOpen]);
+
   return (
     <nav className="navbar">
       <h2 className="logo">Eniola</h2>
 
-      {/* Desktop Menu */}
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
         <li><a href="#hero" onClick={() => setIsOpen(false)}>Home</a></li>
         <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
@@ -24,7 +33,6 @@ function Navbar({ toggleTheme, theme }) {
         </button>
       </ul>
 
-      {/* Hamburger Icon */}
       <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
