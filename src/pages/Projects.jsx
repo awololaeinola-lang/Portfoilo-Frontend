@@ -1,11 +1,11 @@
 import "./Projects.css";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-import project1 from "../assets/Project1.jpg"; 
-import project2 from "../assets/Project2.jpg"; 
-import project3 from "../assets/Project3.jpg"; 
-import project4 from "../assets/Project4.jpg"; 
-import project5 from "../assets/Project5.jpg"; 
+import project1 from "../assets/project1.jpg"; 
+import project2 from "../assets/project2.jpg"; 
+import project3 from "../assets/project3.jpg"; 
+import project4 from "../assets/project4.jpg"; 
+import project5 from "../assets/project5.jpg"; 
 
 function Projects() {
   const projects = [
