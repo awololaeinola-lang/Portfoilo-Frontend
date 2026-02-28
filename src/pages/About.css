@@ -9,6 +9,17 @@
   flex-wrap: wrap;
 }
 
+#about {
+  width: 100%;
+  min-height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px; /* add top/bottom space for navbar */
+  box-sizing: border-box;
+  background: #f9f9f9; /* or your intended color */
+}
 .about-left {
   flex: 1;
   min-width: 280px;
