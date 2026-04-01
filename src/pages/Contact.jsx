@@ -19,7 +19,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("/contact", form);
+      const response = await api.post("/api/contact", form);
       console.log("SUCCESS RESPONSE:", response.data);
       setStatus("Message sent successfully ✅");
       setForm({ name: "", email: "", message: "" });
