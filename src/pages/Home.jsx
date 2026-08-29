@@ -1,56 +1,54 @@
-
 import Hero from "../components/Hero";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
+
 import Experience from "../components/Experience";
 import Testimonials from "../components/Testimonials";
 
-import Navbar from "../components/Navbar";
 import "./Home.css";
 
-function Home({ toggleTheme, theme }) {
+function Home() {
   return (
-    <>
-      {/* Fixed Navbar at top */}
-      <Navbar toggleTheme={toggleTheme} theme={theme} />
+    <main className="home">
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section id="hero">
         <Hero />
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section id="about">
         <About />
       </section>
 
-      {/* Skills Section */}
+      {/* Skills */}
       <section id="skills">
         <Skills />
       </section>
 
-      {/* Experience Section */}
+      {/* Experience */}
       <section id="experience">
         <Experience />
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials */}
       <section id="testimonials">
         <Testimonials />
       </section>
 
-      {/* Projects Section */}
+      {/* Projects */}
       <section id="projects">
         <Projects />
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section id="contact">
         <Contact />
       </section>
-    </>
+
+    </main>
   );
 }
 

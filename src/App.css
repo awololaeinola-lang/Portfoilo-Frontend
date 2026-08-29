@@ -1,39 +1,93 @@
 :root {
-  --bg-color: #f3f4f6;
-  --text-color: #111827;
-  --primary-color: #2563eb;
-  --accent-color: #10b981;
-  --section-bg: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --brand-blue: #2563eb;
+  --brand-blue-dark: #1d4ed8;
+  --brand-blue-light: #eff6ff;
+
+  --border-color: #e2e8f0;
+
+  --card-bg: #ffffff;
+
+  --nav-bg: rgba(255, 255, 255, 0.88);
+
+  --shadow: rgba(15, 23, 42, 0.08);
 }
 
-/* Dark theme */
-.app.dark {
-  --bg-color: #1f2937;
-  --text-color: #f9fafb;
-  --primary-color: #3b82f6;
-  --accent-color: #facc15;
-  --section-bg: #111827;
+
+/* DARK MODE */
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --brand-blue: #3b82f6;
+  --brand-blue-dark: #60a5fa;
+  --brand-blue-light: #172554;
+
+  --border-color: #1e293b;
+
+  --card-bg: #111827;
+
+  --nav-bg: rgba(15, 23, 42, 0.92);
+
+  --shadow: rgba(0, 0, 0, 0.3);
 }
+
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+/* APP */
 
 .app {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background 0.5s, color 0.5s;
+  min-height: 100vh;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
-/* Sections inherit theme */
-section {
-  background-color: var(--section-bg);
-  transition: background 0.5s, color 0.5s;
-}
-
-/* Buttons theme aware */
-.btn {
-  background-color: var(--primary-color);
-  color: #fff;
-  transition: background 0.5s;
-}
-
-.btn-secondary {
-  background-color: var(--accent-color);
-}

@@ -1,4 +1,5 @@
 import "./Skills.css";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -7,44 +8,163 @@ import {
   FaNodeJs,
   FaGitAlt,
 } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiPostman } from "react-icons/si";
+
+import {
+  SiExpress,
+  SiMongodb,
+  SiPostman,
+  SiNextdotjs,
+  SiTailwindcss,
+} from "react-icons/si";
 
 function Skills() {
   const skills = [
-    { name: "HTML5", icon: FaHtml5, color: "#e34c26" },
-    { name: "CSS3", icon: FaCss3Alt, color: "#264de4" },
-    { name: "JavaScript", icon: FaJs, color: "#f7df1e" },
-    { name: "React", icon: FaReact, color: "#61dafb" },
-    { name: "Node.js", icon: FaNodeJs, color: "#3c873a" },
-    { name: "Express", icon: SiExpress, color: "#111" },
-    { name: "MongoDB", icon: SiMongodb, color: "#4db33d" },
-    { name: "Git", icon: FaGitAlt, color: "#f1502f" },
-    { name: "Postman", icon: SiPostman, color: "#ff6c37" },
+    {
+      name: "HTML5",
+      icon: FaHtml5,
+      category: "Frontend",
+    },
+    {
+      name: "CSS3",
+      icon: FaCss3Alt,
+      category: "Frontend",
+    },
+    {
+      name: "JavaScript",
+      icon: FaJs,
+      category: "Frontend",
+    },
+    {
+      name: "React",
+      icon: FaReact,
+      category: "Frontend",
+    },
+    {
+      name: "Next.js",
+      icon: SiNextdotjs,
+      category: "Frontend",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: SiTailwindcss,
+      category: "Frontend",
+    },
+    {
+      name: "Node.js",
+      icon: FaNodeJs,
+      category: "Backend",
+    },
+    {
+      name: "Express",
+      icon: SiExpress,
+      category: "Backend",
+    },
+    {
+      name: "MongoDB",
+      icon: SiMongodb,
+      category: "Database",
+    },
+    {
+      name: "Git",
+      icon: FaGitAlt,
+      category: "Tools",
+    },
+    {
+      name: "Postman",
+      icon: SiPostman,
+      category: "Tools",
+    },
   ];
 
   return (
-    <section id="skills"  className="skills">
+    <section id="skills" className="skills">
+
       <div className="skills-container">
-        <h2 className="skills-title">Skills</h2>
-        <p className="skills-subtitle">
-          Technologies I use to build modern and scalable web applications
-        </p>
+
+        {/* =========================
+            HEADER
+        ========================== */}
+
+        <div className="skills-header">
+
+          <span className="skills-label">
+            <span></span>
+            MY TECH STACK
+          </span>
+
+          <h2>
+            Tools I use to{" "}
+            <span>build great products.</span>
+          </h2>
+
+          <p>
+            Technologies and tools I use to create responsive interfaces,
+            scalable backend systems, and reliable digital products.
+          </p>
+
+        </div>
+
+
+        {/* =========================
+            SKILLS GRID
+        ========================== */}
 
         <div className="skills-grid">
+
           {skills.map((skill, index) => {
+
             const Icon = skill.icon;
+
             return (
-              <div className="skill-card" key={index}>
-                <Icon
-                  className="skill-icon"
-                  style={{ color: skill.color }}
-                />
-                <p className="skill-name">{skill.name}</p>
+              <div
+                className="skill-card"
+                key={skill.name}
+                style={{
+                  "--delay": `${index * 0.07}s`,
+                }}
+              >
+
+                <div className="skill-icon">
+                  <Icon />
+                </div>
+
+                <div className="skill-info">
+
+                  <h3>{skill.name}</h3>
+
+                  <span>{skill.category}</span>
+
+                </div>
+
               </div>
             );
           })}
+
         </div>
+
+
+        {/* =========================
+            BOTTOM STAT
+        ========================== */}
+
+        <div className="skills-bottom">
+
+          <div className="skills-stat">
+            <strong>11+</strong>
+            <span>Technologies</span>
+          </div>
+
+          <div className="skills-divider"></div>
+
+          <p>
+            Always learning, experimenting, and improving my development
+            workflow.
+          </p>
+
+        </div>
+
       </div>
+
     </section>
   );
 }
